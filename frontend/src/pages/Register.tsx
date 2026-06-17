@@ -19,8 +19,15 @@ export default function Register() {
       login(res.data, res.data.token);
       navigate('/dashboard');
     } catch (err: any) {
-      setError(err.response?.data?.error || 'Failed to register');
-    }
+  console.log(err);
+  console.log(err.response?.data);
+
+  setError(
+    err.response?.data?.error ||
+    err.response?.data?.message ||
+    err.message
+  );
+}
   };
 
   return (
