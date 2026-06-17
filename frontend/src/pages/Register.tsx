@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api/axios';
 import { useAuth } from '../context/AuthContext';
 import { Briefcase } from 'lucide-react';
 
@@ -15,7 +15,7 @@ export default function Register() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', { name, email, password });
+      const res = await api.post('/api/auth/register', { name, email, password });
       login(res.data, res.data.token);
       navigate('/dashboard');
     } catch (err: any) {
