@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import type { ReactNode } from "react";
-import axios from 'axios';
+import api from "../api/axios";
 
 interface User {
   _id: string;
@@ -27,8 +27,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const fetchUser = async () => {
       if (token && !user) {
         try {
-          const res = await axios.get('http://localhost:5000/api/auth/me', {
-            headers: { Authorization: `Bearer ${token}` }
+          const res = await api.get('/api/auth/me', {
+              headers: { Authorization: `Bearer ${token}` }
           });
           setUser(res.data);
         } catch (error) {
