@@ -13,7 +13,6 @@ export const uploadResume = async (req: AuthRequest, res: Response) => {
       return res.status(400).json({ error: 'Please upload a file' });
     }
 
-    // Upload to Cloudinary using a stream since we use memory storage
     const uploadStream = cloudinary.uploader.upload_stream(
       { 
         resource_type: 'raw', 
@@ -99,7 +98,6 @@ export const deleteResume = async (req: AuthRequest, res: Response) => {
       return res.status(401).json({ error: 'Not authorized' });
     }
 
-    // Attempt to delete from Cloudinary
     if (resume.fileUrl) {
       const urlParts = resume.fileUrl.split('/');
       const filename = urlParts.pop();

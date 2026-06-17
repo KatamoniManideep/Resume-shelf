@@ -14,7 +14,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
     <div className="flex h-screen bg-background">
-      {/* Sidebar */}
+     
       <aside className="w-64 border-r border-border bg-surface text-textSecondary flex flex-col">
         <div className="p-6">
           <h1 className="text-2xl font-bold text-textPrimary flex items-center gap-2">
@@ -43,7 +43,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         </div>
       </aside>
 
-      {/* Main Content Area */}
+
       <main className="flex-1 flex flex-col overflow-hidden">
         <header className="h-16 border-b border-border bg-surface flex items-center px-8 justify-between">
           <h2 className="text-lg font-semibold text-textPrimary">Dashboard</h2>

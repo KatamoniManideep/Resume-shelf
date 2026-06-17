@@ -6,7 +6,6 @@ import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 
-// Global Axios Interceptor
 axios.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
