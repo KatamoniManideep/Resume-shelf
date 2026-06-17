@@ -1,4 +1,4 @@
-import { ExternalLink, Trash2, Edit2, FileText } from 'lucide-react';
+import { ExternalLink, Trash2, FileText } from 'lucide-react';
 
 interface Resume {
   _id: string;
